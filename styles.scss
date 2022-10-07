@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;800&display=swap');
+
+$accent: #EA5959;
+$font: "Nunito", sans-serif;
+$todo__back: #FFFF;
+$radius: 7px;
+$default: #9f9797;
+body{
+  font-family: $font;
+  background-color: $accent;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.todo{
+  width: 75vw;
+  height: 85vh;
+  padding: 32px;
+  background-color: $todo__back;
+  border-radius: $radius;
+}
+
+// .todo__content {
+// }
+.todo__title {
+  cursor: default;
+  font-weight: 700;
+font-size: 31px;
+line-height: 37px;
+}
+.todo__new {
+  $size: 50px;
+  display: flex;
+  margin: 16px 0 32px;
+  align-items: center;
+  justify-content: center;
+  
+  input{
+    margin-right: 16px;
+    font-size: 18px;
+    padding: 8px 16px;
+    height: $size;
+    background-color: #F3F3F3;
+    border: none;
+    border-radius:$radius;
+    flex-grow: 0.9;
+  }
+}
+
+  .todo__list > *:not(:last-child) {
+  margin-bottom: 8px;
+  }
+  .todo__task {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    min-height: 18px;
+    &:hover .todo__task-del img{
+      display: block;
+    }
+    &:hover .todo__task-del{
+      opacity: 1;
+    }
+  }
+  .todo__checkbox {
+    margin-right: 18px;
+    input{
+      display: none;
+    }
+    div{
+      cursor: pointer;
+      $size: 23px;
+      height: $size;
+      width: $size;
+      border: 1px solid $accent;
+      border-radius: $radius - 2px;
+      position: relative;
+      color: #ffffff;
+      &::after{
+        content: "\2714";
+        text-align: center;
+        display: none;
+        position: absolute;
+        top:15%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      } 
+    }
+  }
+  .todo__checkbox input:checked + div {
+    background-color: $accent;
+  }
+  .todo__checkbox input:checked + div::after {
+    display: block;
+  }
+  .todo__task-compl .todo__task-text{
+    text-decoration: line-through;
+    color:$default ;
+  }
+
+  .todo__task-text {
+    font-size: 18px;
+  }
+  .todo__task-del {
+    $size: 18px;
+    width: $size;
+    height: $size;
+    margin-left:auto;
+    margin-right: 10px;
+    position: relative;
+    opacity: 0;
+    transition: all .6s;
+      &:hover{
+        transform: scale(1.3);
+      }
+      &::after{
+        content: "\2573"
+      }
+    }
+    
+  // .todo__add {
+  //   height: $size;
+  //   width: $size;
+  //   line-height: $size *0.95;
+  //   text-align: center;
+  //   font-size: 32px;
+  //   font-weight: 300px;
+  //   border-radius: $radius*6;
+  //   border: 1px solid black;
+  //   background-color: $accent;
+  //   color: $todo__back;
+  // }

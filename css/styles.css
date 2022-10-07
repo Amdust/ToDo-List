@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;800&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #EA5959;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.todo {
+  width: 75vw;
+  height: 85vh;
+  padding: 32px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+.todo__title {
+  cursor: default;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 37px;
+}
+
+.todo__new {
+  display: flex;
+  margin: 16px 0 32px;
+  align-items: center;
+  justify-content: center;
+}
+.todo__new input {
+  margin-right: 16px;
+  font-size: 18px;
+  padding: 8px 16px;
+  height: 50px;
+  background-color: #F3F3F3;
+  border: none;
+  border-radius: 7px;
+  flex-grow: 0.9;
+}
+
+.todo__list > *:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.todo__task {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+}
+.todo__task:hover .todo__task-del img {
+  display: block;
+}
+.todo__task:hover .todo__task-del {
+  opacity: 1;
+}
+
+.todo__checkbox {
+  margin-right: 18px;
+}
+.todo__checkbox input {
+  display: none;
+}
+.todo__checkbox div {
+  cursor: pointer;
+  height: 23px;
+  width: 23px;
+  border: 1px solid #EA5959;
+  border-radius: 5px;
+  position: relative;
+  color: #ffffff;
+}
+.todo__checkbox div::after {
+  content: "✔";
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.todo__checkbox input:checked + div {
+  background-color: #EA5959;
+}
+
+.todo__checkbox input:checked + div::after {
+  display: block;
+}
+
+.todo__task-compl .todo__task-text {
+  text-decoration: line-through;
+  color: #9f9797;
+}
+
+.todo__task-text {
+  font-size: 18px;
+}
+
+.todo__task-del {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  margin-right: 10px;
+  position: relative;
+  opacity: 0;
+  transition: all 0.6s;
+}
+.todo__task-del:hover {
+  transform: scale(1.3);
+}
+.todo__task-del::after {
+  content: "╳";
+}/*# sourceMappingURL=styles.css.map */
